@@ -11,8 +11,14 @@
     <title>Form Validation</title>
   </head>
   <body>
-    <div id="success" class="alert alert-success alert-dismissible fade show" role="alert">
+    <div id="success" class="alert alert-success alert-dismissible fade" role="alert">
         <strong>Success</strong> You form has been successfully submitted
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div id="failure" class="alert alert-danger alert-dismissible fade" role="alert">
+        <strong>Error!</strong> Please, fill the information correctly.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -29,6 +35,8 @@
             <div class="form-group">
               <label for="email">Email</label>
               <input type="text" class="form-control" id="email" placeholder="abc@gmail.com">
+              <small id="emailValid" class="form-text text-muted invalid-feedback">email is invalid.</small>
+
             </div>
             <div class="form-group">
               <label for="car">Select your Car</label>
@@ -46,12 +54,14 @@
             <div class="form-group">
               <label for="number">Enter your Phone number </label>
               <input type="text" class="form-control" id="number" placeholder="Number">
+              <small id="numberValid" class="form-text text-muted invalid-feedback">Phone number must be of 10 digit long.</small>
+
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Other meassage</label>
               <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
             </div>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" id="submit" class="btn btn-primary">Submit</button>
           </form>
 
     </div>
